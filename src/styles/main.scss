@@ -52,6 +52,10 @@ ul, ol {
       line-height: 1;
       cursor: pointer;
 
+      &:active {
+        background: $green;
+      }
+
       &:after {
         content: url(../assets/images/arrow-right.svg);
         width: 16px;
