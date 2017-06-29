@@ -33,7 +33,30 @@ ul, ol {
   padding-left: 0;
 
   li {
-    padding: 24px 0;
     border-bottom: 2px solid $green;
+
+    .li-label {
+      padding: 24px 0;
+    }
+
+    .li-btn {
+      display: block;
+      width: 100%;
+      padding: 24px 0;
+      border: 0;
+      background-color: transparent;
+      font-size: 16pt;
+      text-align: left;
+      color: $white;
+      line-height: 1;
+      cursor: pointer;
+
+      &:after {
+        content: url(../assets/images/arrow-right.svg);
+        width: 16px;
+        height: 26px;
+        float: right;
+      }
+    }
   }
 }

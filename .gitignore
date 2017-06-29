@@ -11,5 +11,5 @@
 
 ### PROJECT DIRECTORIES AND FILES ###
 *.log
-assets
-node_modules
+/assets
+/node_modules

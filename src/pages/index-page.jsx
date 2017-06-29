@@ -27,9 +27,15 @@ export default class IndexPage extends Component {
             </div>
             <div className="column right">
               <ul>
-                <li>Option 01</li>
-                <li>Option 02</li>
-                <li>Option 03</li>
+                <li>
+                  <div className="li-label">Option 01</div>
+                </li>
+                <li>
+                  <div className="li-label">Option 02</div>
+                </li>
+                <li>
+                  <div className="li-label">Option 03</div>
+                </li>
               </ul>
             </div>
           </div>
@@ -39,9 +45,24 @@ export default class IndexPage extends Component {
           <div className="centered-content">
             <div className="column left">
               <ul>
-                <li>Option 01</li>
-                <li>Option 02</li>
-                <li>Option 03</li>
+                <li>
+                  <button
+                    className="li-btn"
+                    type="button"
+                  >Button 01</button>
+                </li>
+                <li>
+                  <button
+                    className="li-btn"
+                    type="button"
+                  >Button 02</button>
+                </li>
+                <li>
+                  <button
+                    className="li-btn"
+                    type="button"
+                  >Button 03</button>
+                </li>
               </ul>
             </div>
             <div className="column right">
