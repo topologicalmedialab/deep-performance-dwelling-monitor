@@ -4,10 +4,12 @@
 *._*
 *.DS_STORE
 
-### NODE MODULES ###
-node_modules
-
 ### MOCKUPS ETC. ###
 *.psd
 *.ai
 *.indd
+
+### PROJECT DIRECTORIES AND FILES ###
+*.log
+assets
+node_modules
