@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'header';
 
 body {
   margin: 0;
@@ -6,5 +7,33 @@ body {
   padding: 0;
   background-color: $darkBlue;
   font-family: $ffSansSerif;
+  font-size: 16pt;
   color: $white;
+}
+
+.centered-content {
+  position: relative;
+  margin: 0 auto;
+  width: $screenWidth;
+}
+
+.column {
+  display: inline-block;
+  vertical-align: top;
+  width: $columnWidth;
+}
+
+p {
+  width: $columnContentWidth;
+}
+
+ul, ol {
+  width: $columnContentWidth;
+  list-style: none;
+  padding-left: 0;
+
+  li {
+    padding: 24px 0;
+    border-bottom: 2px solid $green;
+  }
 }
