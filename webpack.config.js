@@ -4,7 +4,9 @@ const webpack = require('webpack');
 module.exports = {
   context: path.resolve(__dirname, './src'),
   devServer: {
-    contentBase: path.resolve(__dirname, './www')
+    contentBase: path.resolve(__dirname, './www'),
+    host: 'local.dpd.edu',
+    port: 6464
   },
   module: {
     loaders: [
