@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import ScreenGuides from '../components/screen-guides/screen-guides.jsx';
+
 require('../styles/main.scss');
 
 
@@ -73,6 +75,7 @@ export default class DemoPage extends Component {
           </div>
         </section>
 
+        <ScreenGuides/>
       </div>
     );
   }

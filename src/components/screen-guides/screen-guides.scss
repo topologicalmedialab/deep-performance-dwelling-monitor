@@ -1,0 +1,15 @@
+@import '../../styles/variables';
+
+.screen-guides {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  z-index: 256;
+
+  width: $screenWidth;
+  height: $screenHeight;
+
+  margin-left: -400px;
+
+  border: 1px dotted $white;
+}
