@@ -6,8 +6,8 @@
   left: 50%;
   z-index: 256;
 
-  width: $screenWidth;
-  height: $screenHeight;
+  width: $screenWidth - 2;
+  height: $screenHeight - 2;
 
   margin-left: -400px;
 
