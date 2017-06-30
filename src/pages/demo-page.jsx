@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import ScreenGuides from '../components/screen-guides/screen-guides.jsx';
+import HeaderNavButton from '../components/header-nav-button/header-nav-button.jsx';
 
 require('../styles/main.scss');
 
@@ -16,7 +17,11 @@ export default class DemoPage extends Component {
       <div className="demo-page">
         <header className="header">
           <div className="centered-content">
-            <h1>Page Header</h1>
+            <h1>
+              <HeaderNavButton direction="left"/>
+              <span>Page Header</span>
+              <HeaderNavButton direction="right"/>
+            </h1>
           </div>
         </header>
 
