@@ -75,6 +75,8 @@ export default class DemoPage extends Component {
           </div>
         </section>
 
+        <footer className="footer"></footer>
+
         <ScreenGuides/>
       </div>
     );

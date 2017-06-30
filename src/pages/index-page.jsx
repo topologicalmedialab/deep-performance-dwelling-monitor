@@ -46,7 +46,8 @@ export default class IndexPage extends Component {
             </div>
           </div>
         </section>
-
+        
+        <footer className="footer"></footer>
       </div>
     );
   }
