@@ -5,7 +5,7 @@ body {
   margin: 0;
   border: 0;
   padding: 0;
-  background-color: $darkBlue;
+  background-color: $darkColor;
   font-family: $ffSansSerif;
   font-size: 16pt;
   color: $white;
@@ -34,7 +34,7 @@ ul, ol {
   padding-left: 0;
 
   li {
-    border-bottom: 2px solid $green;
+    border-bottom: 2px solid $primaryColor;
 
     .li-label {
       padding: 24px 0;
@@ -53,7 +53,7 @@ ul, ol {
       cursor: pointer;
 
       &:active {
-        background: $green;
+        background: $primaryColor;
       }
 
       &:after {
@@ -67,7 +67,7 @@ ul, ol {
 }
 
 :focus {
-  border-color: $orange;
-  box-shadow: 0 0 0 4px $orange;
+  border-color: $secondaryColor;
+  box-shadow: 0 0 0 4px $secondaryColor;
   outline: 0 !important;
 }
