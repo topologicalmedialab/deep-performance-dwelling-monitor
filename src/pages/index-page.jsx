@@ -18,31 +18,32 @@ export default class IndexPage extends Component {
           </div>
         </header>
 
-        <section>
+        <section className="fixed-height">
           <div className="centered-content">
-            <div className="column left">
-            </div>
-            <div className="column right">
-              <ul>
-                <li>
-                  <button
-                    className="li-btn"
-                    type="button"
-                  >Liquid Light</button>
-                </li>
-                <li>
-                  <button
-                    className="li-btn"
-                    type="button"
-                  >Passing Light</button>
-                </li>
-                <li>
-                  <button
-                    className="li-btn"
-                    type="button"
-                  >Shadow Play</button>
-                </li>
-              </ul>
+            <div className="column left"></div>
+            <div className="column right fixed">
+              <div className="column-content aligned-bottom">
+                <ul>
+                  <li>
+                    <button
+                      className="li-btn"
+                      type="button"
+                    >Liquid Light</button>
+                  </li>
+                  <li>
+                    <button
+                      className="li-btn"
+                      type="button"
+                    >Passing Light</button>
+                  </li>
+                  <li>
+                    <button
+                      className="li-btn"
+                      type="button"
+                    >Shadow Play</button>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </section>
@@ -52,7 +53,5 @@ export default class IndexPage extends Component {
     );
   }
 
-  componentDidMount() {
-
-  }
+  componentDidMount() {}
 }
