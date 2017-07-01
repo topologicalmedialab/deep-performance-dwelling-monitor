@@ -20,11 +20,19 @@ body {
   border: 0;
   padding: 0;
   min-height: 100%;
-  padding-bottom: 64px;
+  padding-bottom: 32px;
   background-color: $darkColor;
   font-family: $ffSansSerif;
   font-size: 16pt;
   color: $white;
+}
+
+section {
+  margin-top: 24px;
+
+  &.fixed-height {
+    height: 342px;
+  }
 }
 
 .centered-content {
@@ -37,17 +45,40 @@ body {
   display: inline-block;
   vertical-align: top;
   width: $columnWidth;
+
+  &.left {
+    padding: 0 16px 0 32px;
+  }
+
+  &.right {
+    padding: 0 32px 0 16px ;
+  }
+
+  &.fixed {
+    height: 342px;
+    overflow: scroll;
+  }
+
+  .column-content {
+    &.aligned-bottom {
+      position: absolute;
+      bottom: 0;
+    }
+  }
+
 }
 
 p {
   width: $columnContentWidth;
+  margin: 0 0 24px 0;
   line-height: 1.8;
 }
 
 ul, ol {
   width: $columnContentWidth;
-  list-style: none;
+  margin: 0;
   padding-left: 0;
+  list-style: none;
 
   li {
     border-bottom: 2px solid $primaryColor;
