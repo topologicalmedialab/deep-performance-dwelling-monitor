@@ -61,7 +61,7 @@ add this component and format some weird looking code that looked weird
 
 <br/>
 <a name="pull-requests"></a>
-## Submitting Pull Requests (PR)
+### Submitting Pull Requests (PR)
 
 Once the work on your branch is complete, make sure to pull from the latest `develop` branch and fix any conflict if necessary.
 
