@@ -25,6 +25,8 @@
 
 Branch names should be a few descriptive words to help distinguish the branch by area of focus. Branch names must be in lowercase with dashes.
 
+Ideally, all branches should be related to a Github issue.
+
 ```
 // DO:
 name-of-feature
@@ -32,7 +34,7 @@ name-of-feature
 
 ```
 // DON'T (wrong case, too long):
-The_Entire_Summary_From_The_Jira_Issue_Which_Happens_To_Be_Like_Twenty_Words
+The_Entire_Summary_Of_Issue_Which_Happens_To_Be_Like_Twenty_Words
 ```
 
 
@@ -40,7 +42,7 @@ The_Entire_Summary_From_The_Jira_Issue_Which_Happens_To_Be_Like_Twenty_Words
 <a name="commit-messages"></a>
 ### Commit Messages Convention
 
-A commit message's intial line should provide a summary in the imperative present tense, and should be 50 characters or less.
+A commit message's intial line should provide a summary in the past tense, and should be 50 characters or less. If the work is related to a Github issue (which is ideal), ensure to append the line with the issue number.
 
 Further description is encouraged, and may take place in subsequent lines below the summary.
 
