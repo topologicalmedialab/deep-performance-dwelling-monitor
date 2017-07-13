@@ -97,6 +97,9 @@ export default class IndexPage extends Component {
   }
 
   onPageChanged() {
+    // global scroll on page change
+    window.scrollTo(0, 0);
+
     if (AppModel.getCurrentPage() === this.state.id) {
       this.setState({
         position: 0
