@@ -16,7 +16,10 @@ export default class ListButton extends Component {
         type="button"
         disabled={this.props.isDisabled}
         onClick={this.props.onClick}
-      >{this.props.label}</button>
+      >
+        <span className="li-btn-label">{this.props.label}</span>
+        <span className="li-btn-current-value">{this.props.currentValue}</span>
+      </button>
     );
   }
 

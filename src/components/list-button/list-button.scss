@@ -10,7 +10,6 @@
   color: $white;
 
   font-size: 16pt;
-  font-weight: 300;
   text-align: left;
   line-height: 1;
 
@@ -33,5 +32,16 @@
       width: 16px;
       height: 26px;
     }
+  }
+
+  .li-btn-label {
+    font-weight: 300;
+  }
+
+  .li-btn-current-value {
+    position: absolute;
+    right: 32px;
+    font-weight: 200;
+    opacity: 0.8;
   }
 }
