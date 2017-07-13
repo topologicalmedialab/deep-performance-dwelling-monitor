@@ -15,6 +15,7 @@ export default class HeaderNavButton extends Component {
       <button
         className={buttonClassName}
         type="button"
+        onClick={this.props.onClick}
       >
         <span className="arrow"></span>
       </button>
