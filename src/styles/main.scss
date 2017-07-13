@@ -32,6 +32,10 @@ section {
   &.fixed-height {
     height: 382px;
   }
+
+  &.scrollable {
+    min-height: 382px;
+  }
 }
 
 .page {

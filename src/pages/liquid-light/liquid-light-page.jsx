@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 // constants
 import Pages from '../../constants/pages';
+import LiquidLightModes from './constants/liquid-light-modes';
+import LiquidLightPages from './constants/liquid-light-pages';
 
 // services
 import PageService from '../../services/page-service';
@@ -13,6 +15,7 @@ import PageModel from '../../models/page-model';
 // components
 import HeaderNavButton from '../../components/header-nav-button/header-nav-button.jsx';
 import ListButton from '../../components/list-button/list-button.jsx';
+import LiquidLightModel from './models/liquid-light-model';
 
 
 require('../../styles/main.scss');
@@ -22,7 +25,6 @@ export default class LiquidLightPage extends Component {
   constructor() {
     super();
     this.state = new PageModel(Pages.LIQUID_LIGHT);
-    this.state.position = 1;
   }
 
   // react method definitions
@@ -53,6 +55,8 @@ export default class LiquidLightPage extends Component {
                   <li>
                     <ListButton
                       label="Mode"
+                      currentValue={this.state.mode}
+                      onClick={this.gotoModesPage}
                     />
                   </li>
                 </ul>
@@ -67,17 +71,38 @@ export default class LiquidLightPage extends Component {
   }
 
   componentDidMount() {
+    // set initial state
+    LiquidLightModel.changeMode(LiquidLightModes.ON);
+    this.setState({
+      position: 1,
+      mode: LiquidLightModel.getCurrentMode()
+    });
+
+    // add signal handler
     AppModel.pageChanged.add(this.onPageChanged, this);
+    LiquidLightModel.modeChanged.add(this.onModeChanged, this);
   }
 
   componentWillUnmount() {
     AppModel.pageChanged.remove(this.onPageChanged, this);
+    LiquidLightModel.modeChanged.add(this.onModeChanged, this);
   }
 
 
   // methods definitions
   gotoIndex() {
     AppModel.changePage(Pages.INDEX);
+  }
+
+  gotoModesPage() {
+    AppModel.changePage(LiquidLightPages.MODES);
+  }
+
+  onModeChanged() {
+    // TODO: call webservice (display spinner?)
+    this.setState({
+      mode: LiquidLightModel.getCurrentMode()
+    });
   }
 
   onPageChanged() {
