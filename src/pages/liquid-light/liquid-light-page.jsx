@@ -59,6 +59,19 @@ export default class LiquidLightPage extends Component {
                       onClick={this.gotoModesPage}
                     />
                   </li>
+                  <li>
+                    <ListButton
+                      label="Light Intensity"
+                      isDisabled="true"
+                    />
+                  </li>
+                  <li>
+                    <ListButton
+                      label="Shut Down"
+                      hasArrow="false"
+                      isDisabled="true"
+                    />
+                  </li>
                 </ul>
               </div>
             </div>
