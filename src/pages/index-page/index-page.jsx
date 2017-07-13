@@ -10,6 +10,9 @@ import PageService from '../../services/page-service';
 import AppModel from '../../models/app-model';
 import PageModel from '../../models/page-model';
 
+// components
+import ListButton from '../../components/list-button/list-button.jsx';
+
 require('../../styles/main.scss');
 
 
@@ -41,25 +44,24 @@ export default class IndexPage extends Component {
               <div className="column-content aligned-bottom">
                 <ul>
                   <li>
-                    <button
-                      className="li-btn"
-                      type="button"
+                    <ListButton
+                      label="Liquid Light"
                       onClick={this.gotoLiquidLightPage}
-                    >Liquid Light</button>
+                    />
                   </li>
                   <li>
-                    <button
-                      className="li-btn"
-                      type="button"
+                    <ListButton
+                      label="Passing Light"
+                      isDisabled="true"
                       onClick={this.gotoPassingLightPage}
-                    >Passing Light</button>
+                    />
                   </li>
                   <li>
-                    <button
-                      className="li-btn"
-                      type="button"
+                    <ListButton
+                      label="Shadow Play"
+                      isDisabled="true"
                       onClick={this.gotoShadowPlayPage}
-                    >Shadow Play</button>
+                    />
                   </li>
                 </ul>
               </div>

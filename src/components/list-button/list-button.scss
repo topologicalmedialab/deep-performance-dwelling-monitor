@@ -1,0 +1,37 @@
+@import '../../styles/variables';
+
+.li-btn {
+  display: block;
+  width: 100%;
+  padding: 24px 0;
+  border: 0;
+
+  background-color: transparent;
+  color: $white;
+
+  font-size: 16pt;
+  font-weight: 300;
+  text-align: left;
+  line-height: 1;
+
+  &:enabled {
+    cursor: pointer;
+
+    &:active {
+      background: $primaryColor;
+    }
+  }
+
+  &:disabled {
+    opacity: 0.333;
+  }
+
+  &.has-arrow {
+    &:after {
+      content: url(../../assets/images/arrow-right.svg);
+      float: right;
+      width: 16px;
+      height: 26px;
+    }
+  }
+}

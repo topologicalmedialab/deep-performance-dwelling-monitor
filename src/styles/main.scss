@@ -98,30 +98,6 @@ ul, ol {
     .li-label {
       padding: 24px 0;
     }
-
-    .li-btn {
-      display: block;
-      width: 100%;
-      padding: 24px 0;
-      border: 0;
-      background-color: transparent;
-      font-size: 16pt;
-      text-align: left;
-      color: $white;
-      line-height: 1;
-      cursor: pointer;
-
-      &:active {
-        background: $primaryColor;
-      }
-
-      &:after {
-        content: url(../assets/images/arrow-right.svg);
-        width: 16px;
-        height: 26px;
-        float: right;
-      }
-    }
   }
 }
 

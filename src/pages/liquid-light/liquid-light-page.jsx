@@ -12,6 +12,8 @@ import PageModel from '../../models/page-model';
 
 // components
 import HeaderNavButton from '../../components/header-nav-button/header-nav-button.jsx';
+import ListButton from '../../components/list-button/list-button.jsx';
+
 
 require('../../styles/main.scss');
 
@@ -49,10 +51,9 @@ export default class LiquidLightPage extends Component {
               <div className="column-content aligned-bottom">
                 <ul>
                   <li>
-                    <button
-                      className="li-btn"
-                      type="button"
-                    >Mode</button>
+                    <ListButton
+                      label="Mode"
+                    />
                   </li>
                 </ul>
               </div>
