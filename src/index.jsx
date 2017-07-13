@@ -1,10 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import DemoPage from './pages/demo-page.jsx';
+import IndexPage from './pages/index-page/index-page.jsx';
+import LiquidLightPage from './pages/liquid-light/liquid-light-page.jsx';
 
 
 ReactDOM.render(
-  <DemoPage />,
+  <div className="centered-content">
+    <IndexPage />
+    <LiquidLightPage /> 
+  </div>
+  ,
   document.getElementById('root')
 );
