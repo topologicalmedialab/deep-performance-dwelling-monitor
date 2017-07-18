@@ -65,9 +65,20 @@ function setLightIntensity(value) {
     );
   }
 
-  // scale
-  var intensity = Math.round(value * 255);
-  // TODO: post to endpoint
+  // limit value
+  if (value < 0) {
+    value = 0;
+  } else if (value > 1) {
+    value = 1;
+  }
+
+  // post request
+  var request = new XMLHttpRequest();   // new HttpRequest instance 
+  request.open('POST', ENDPOINT_URL + 'light');
+  request.setRequestHeader('Content-Type', 'application/json');
+  request.send(JSON.stringify({
+    intensity: Math.round(value * 255)
+  }));
 }
 
 function shutDown() {
