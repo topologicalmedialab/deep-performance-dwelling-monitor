@@ -14,6 +14,7 @@
     display: inline-block;
     width: 48px;
     height: 48px;
+    border-radius: 24px;
 
     background-color: $primaryColor;
 
@@ -29,6 +30,7 @@
     display: inline-block;
     width: 304px;
     height: 16px;
+    border-radius: 8px;
 
     background-color: $primaryColor;
     opacity: 0.45;
@@ -43,6 +45,7 @@
     display: inline-block;
     width: 304px;
     height: 16px;
+    border-radius: 8px;
 
     background-color: $lightGray;
   }
