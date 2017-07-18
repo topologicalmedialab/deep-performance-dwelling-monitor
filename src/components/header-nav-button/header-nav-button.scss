@@ -8,13 +8,13 @@
   cursor: pointer;
 
   &.left {
-    left: 0;
+    left: 4px;
     .arrow {
       background-image: url(../../assets/images/arrow-left.svg);
     }
   }
   &.right {
-    right: 0;
+    right: 4px;
     .arrow {
       background-image: url(../../assets/images/arrow-right.svg);
     }
