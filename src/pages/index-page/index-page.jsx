@@ -42,8 +42,11 @@ export default class IndexPage extends Component {
           <div className="centered-content">
             <div className="column left"></div>
             <div className="column right fixed">
-              <div className="column-content aligned-bottom">
+              <div className="column-content">
                 <ul>
+                  <li className="is-header">
+                    <h2>Projects</h2>
+                  </li>
                   <li>
                     <ListButton
                       label="Liquid Light"
@@ -62,6 +65,18 @@ export default class IndexPage extends Component {
                       label="Shadow Play"
                       isDisabled="true"
                       onClick={this.gotoShadowPlayPage}
+                    />
+                  </li>
+                </ul>
+                <ul className="has-separator">
+                  <li className="is-header">
+                    <h2>Touchscreen</h2>
+                  </li>
+                  <li>
+                    <ListButton
+                      label="Reboot"
+                      hasArrow="false"
+                      isDisabled="true"
                     />
                   </li>
                 </ul>

@@ -106,13 +106,23 @@ ul, ol {
   list-style: none;
 
   &.has-separator {
-    padding: 24px 0 0 0;
+    padding: 48px 0 0 0;
+  }
+
+  h2 {
+    margin: 0;
+    font-size: 20pt;
+    font-weight: 500;
   }
 
   li {
     border-bottom: 2px solid $primaryColor;
 
-    .li-header {
+    &.is-header {
+      border-bottom: none;
+    }
+
+    .li-ui-label {
       padding: 24px 0 0 0;
     }
 

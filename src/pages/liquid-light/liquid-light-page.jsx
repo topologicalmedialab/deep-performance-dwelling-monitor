@@ -63,16 +63,16 @@ export default class LiquidLightPage extends Component {
                     />
                   </li>
                 </ul>
-                <ul className="has-separator">
+                <ul>
                   <li>
-                    <div className="li-header">Light Intensity</div>
+                    <div className="li-ui-label">Light Intensity</div>
                     <Slider
                       id="lightIntensitySlider"
                       onUpdated={this.onLightIntensityUpdated}
                     />
                   </li>
                 </ul>
-                <ul className="has-separator">
+                <ul>
                   <li>
                     <ListButton
                       label="Shut Down"
