@@ -44,14 +44,14 @@ export default class LiquidLightModesPage extends Component {
               hasArrow="false"
               onClick={this.gotoLiquidLightPage}
             />
-            <h1>Liquid Light</h1>
+            <h1>Modes</h1>
           </div>
         </header>
 
-        <section className="scrollable">
+        <section className="fixed-height">
           <div className="centered-content">
             <div className="column left"></div>
-            <div className="column right">
+            <div className="column right fixed">
               <div className="column-content">
                 <ul>
                   <li>
