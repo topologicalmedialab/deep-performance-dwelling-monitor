@@ -1,6 +1,14 @@
 var _ = require('lodash');
 
 
+import LiquidLightModes from '../constants/liquid-light-modes';
+import Settings from '../../../constants/settings';
+
+
+// constants
+const ENDPOINT_URL = 'http://' + Settings.ENDPOINT_HOST + ':' + Settings.ENDPOINT_PORT + '/liquid-light/';
+
+
 // public api
 let LiquidLightService = {
   setLightIntensity: setLightIntensity,
@@ -12,7 +20,40 @@ export default LiquidLightService;
 
 // methods definitions
 function setMode(value) {
-  // TODO: send to endpoint
+  var url;
+
+  switch (value) {
+    case LiquidLightModes.ON:
+      url = ENDPOINT_URL + 'mode/on'
+      break;
+
+    case LiquidLightModes.OFF:
+      url = ENDPOINT_URL + 'mode/off'
+      break;
+
+    case LiquidLightModes.AUTOMATION:
+      url = ENDPOINT_URL + 'mode/automation'
+      break;
+
+    case LiquidLightModes.DEMO:
+      url = ENDPOINT_URL + 'mode/demo'
+      break;
+
+    case LiquidLightModes.PARTY:
+      url = ENDPOINT_URL + 'mode/party'
+      break;
+
+    case LiquidLightModes.PASSIVE:
+      url = ENDPOINT_URL + 'mode/passive'
+      break;
+
+    default:
+      // TODO: throw error for unhandled case?
+  }
+
+  var request = new XMLHttpRequest();
+  request.open('GET', url);
+  request.send();
 }
 
 function setLightIntensity(value) {
@@ -26,9 +67,11 @@ function setLightIntensity(value) {
 
   // scale
   var intensity = Math.round(value * 255);
-  // TODO: send to endpoint
+  // TODO: post to endpoint
 }
 
 function shutDown() {
-  // TODO: send to endpoint
+  var request = new XMLHttpRequest();
+  request.open('GET', ENDPOINT_URL + 'shut-down');
+  request.send();
 }
