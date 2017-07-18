@@ -18,6 +18,7 @@ export default class Slider extends Component {
 
     // dom
     this._handle = null;
+    this._progressBar = null;
 
     // TODO: move to state?
     this._isDragging = false;
@@ -26,7 +27,7 @@ export default class Slider extends Component {
     this._dragOrigin = -1;
     this._dragDelta = -1;
 
-    this._ratio = -1;
+    this._ratio = 0;
   }
 
   // react method definitions
@@ -34,13 +35,19 @@ export default class Slider extends Component {
     return (
       <div id={this.props.id} className="slider">
         <span className="slider-handle"></span>
+        <span className="slider-progress"></span>
+        <span className="slider-track"></span>
       </div>
     );
   }
 
   componentDidMount() {
+    // get dom elements
     let component = document.getElementById(this.props.id);
     this._handle = component.getElementsByClassName('slider-handle')[0];
+    this._progressBar = component.getElementsByClassName('slider-progress')[0];
+
+    this.updateProgressBar();
 
     // add event listeners
     this._handle.addEventListener('mousedown', this.onGrabbedHandle.bind(this));
@@ -87,6 +94,7 @@ export default class Slider extends Component {
       this._dragDelta = event.clientX - this._dragOrigin;
       this._handle.style.left = this.getNewHandlePosition();
       this.updateRatio();
+      this.updateProgressBar();
     }
   }
 
@@ -94,6 +102,11 @@ export default class Slider extends Component {
     if (this._isDragging) {
       this._isDragging = false;
     }
+  }
+
+  updateProgressBar() {
+    var newWidth = this._ratio * 304; // ratio * max width (304)
+    this._progressBar.style.width = newWidth + 'px';
   }
 
   updateRatio() {

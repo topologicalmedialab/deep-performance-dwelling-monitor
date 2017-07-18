@@ -1,5 +1,6 @@
 @import '../../styles/variables';
 
+
 .slider {
   position: relative;
   display: block;
@@ -8,7 +9,7 @@
 
   .slider-handle {
     position: absolute;
-    z-index: 1;
+    z-index: 2;
 
     display: inline-block;
     width: 48px;
@@ -19,15 +20,29 @@
     cursor: pointer;
   }
 
+  .slider-progress {
+    position: absolute;
+    left: 24px;
+    top: 40px;
+    z-index: 1;
+
+    display: inline-block;
+    width: 304px;
+    height: 16px;
+
+    background-color: $primaryColor;
+    opacity: 0.45;
+  }
+
   .slider-track {
     position: absolute;
-    left: 12px;
-    top: 44px;
+    left: 24px;
+    top: 40px;
     z-index: 0;
 
     display: inline-block;
-    width: 328px;
-    height: 8px;
+    width: 304px;
+    height: 16px;
 
     background-color: $lightGray;
   }
