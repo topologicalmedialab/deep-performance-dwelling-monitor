@@ -131,7 +131,6 @@ export default class LiquidLightPage extends Component {
   }
 
   onPageChanged() {
-
     if (AppModel.getCurrentPage() === this.state.id) {
       // set current page on screen
       this.setState({
@@ -141,7 +140,7 @@ export default class LiquidLightPage extends Component {
       // set current page height
       AppModel.toggleScroll(PageService.getPageHeight(this.uid));
 
-  } else {
+    } else {
       // set current page at right of screen
       this.setState({
         position: 1
