@@ -60,18 +60,17 @@ export default class LiquidLightPage extends Component {
                       onClick={this.gotoModesPage}
                     />
                   </li>
+                </ul>
+                <ul className="has-separator">
                   <li>
-                    <ListButton
-                      label="Light Intensity"
-                      isDisabled="true"
-                    />
-                  </li>
-                  <li>
+                    <div className="li-header">Light Intensity</div>
                     <Slider
                       id="lightIntensitySlider"
                       onUpdated={this.onLightIntensityUpdated}
                     />
                   </li>
+                </ul>
+                <ul className="has-separator">
                   <li>
                     <ListButton
                       label="Shut Down"

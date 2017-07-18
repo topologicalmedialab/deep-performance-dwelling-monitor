@@ -96,8 +96,16 @@ ul, ol {
   padding-left: 0;
   list-style: none;
 
+  &.has-separator {
+    padding: 24px 0 0 0;
+  }
+
   li {
     border-bottom: 2px solid $primaryColor;
+
+    .li-header {
+      padding: 24px 0 0 0;
+    }
 
     .li-label {
       padding: 24px 0;
