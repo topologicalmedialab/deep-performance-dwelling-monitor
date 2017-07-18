@@ -56,19 +56,19 @@ export default class LiquidLightPage extends Component {
               <div className="column-content aligned-bottom">
                 <ul>
                   <li>
-                    <ListButton
-                      label="Mode"
-                      currentValue={this.state.mode}
-                      onClick={this.gotoModesPage}
+                    <div className="li-ui-label">Light Intensity</div>
+                    <Slider
+                      id="lightIntensitySlider"
+                      onUpdated={this.onLightIntensityUpdated}
                     />
                   </li>
                 </ul>
                 <ul>
                   <li>
-                    <div className="li-ui-label">Light Intensity</div>
-                    <Slider
-                      id="lightIntensitySlider"
-                      onUpdated={this.onLightIntensityUpdated}
+                    <ListButton
+                      label="Mode"
+                      currentValue={this.state.mode}
+                      onClick={this.gotoModesPage}
                     />
                   </li>
                 </ul>
