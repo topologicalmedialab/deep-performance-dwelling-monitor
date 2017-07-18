@@ -7,6 +7,7 @@ import LiquidLightPages from './constants/liquid-light-pages';
 
 // services
 import PageService from '../../services/page-service';
+import LiquidLightService from './services/liquid-light-service';
 
 // models
 import AppModel from '../../models/app-model';
@@ -118,14 +119,14 @@ export default class LiquidLightPage extends Component {
   }
 
   onLightIntensityUpdated(signal) {
-    // TODO: call webservice to send signal.ratio
+    LiquidLightService.setLightIntensity(signal.ratio);
   }
 
   onModeChanged() {
-    // TODO: call webservice (display spinner?)
     this.setState({
       mode: LiquidLightModel.getCurrentMode()
     });
+    LiquidLightService.setMode(LiquidLightModel.getCurrentMode());
   }
 
   onPageChanged() {
