@@ -11,11 +11,12 @@ import PageService from '../../services/page-service';
 // models
 import AppModel from '../../models/app-model';
 import PageModel from '../../models/page-model';
+import LiquidLightModel from './models/liquid-light-model';
 
 // components
 import HeaderNavButton from '../../components/header-nav-button/header-nav-button.jsx';
 import ListButton from '../../components/list-button/list-button.jsx';
-import LiquidLightModel from './models/liquid-light-model';
+import Slider from '../../components/slider/slider.jsx';
 
 
 require('../../styles/main.scss');
@@ -66,6 +67,12 @@ export default class LiquidLightPage extends Component {
                     />
                   </li>
                   <li>
+                    <Slider
+                      id="lightIntensitySlider"
+                      onUpdated={this.onLightIntensityUpdated}
+                    />
+                  </li>
+                  <li>
                     <ListButton
                       label="Shut Down"
                       hasArrow="false"
@@ -109,6 +116,10 @@ export default class LiquidLightPage extends Component {
 
   gotoModesPage() {
     AppModel.changePage(LiquidLightPages.MODES);
+  }
+
+  onLightIntensityUpdated(signal) {
+    // TODO: call webservice to send signal.ratio
   }
 
   onModeChanged() {
