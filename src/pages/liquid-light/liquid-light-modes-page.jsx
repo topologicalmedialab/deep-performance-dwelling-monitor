@@ -24,6 +24,7 @@ require('../../styles/main.scss');
 export default class LiquidLightModesPage extends Component {
   constructor() {
     super();
+    this.uid = 'liquidLightModesPage';
     this.state = new PageModel(LiquidLightPages.MODES);
   }
 
@@ -35,7 +36,7 @@ export default class LiquidLightModesPage extends Component {
     );
 
     return (
-      <div id="liquidLightModesPage" className={pageClasses}>
+      <div id={this.uid} className={pageClasses}>
         <header className="header">
           <div className="centered-content">
             <HeaderNavButton
@@ -128,10 +129,16 @@ export default class LiquidLightModesPage extends Component {
 
   onPageChanged() {
     if (AppModel.getCurrentPage() === this.state.id) {
+      // set current page on screen
       this.setState({
         position: 0
       });
+
+      // set current page height
+      AppModel.toggleScroll(PageService.getPageHeight(this.uid));
+
     } else {
+      // set current page at right of screen
       this.setState({
         position: 1
       });

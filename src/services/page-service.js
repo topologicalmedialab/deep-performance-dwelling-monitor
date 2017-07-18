@@ -1,6 +1,7 @@
 // public api
 let PageService = {
-  getPageClasses: getPageClasses
+  getPageClasses: getPageClasses,
+  getPageHeight: getPageHeight,
 };
 export default PageService;
 
@@ -14,4 +15,14 @@ function getPageClasses(pageId, position) {
     baseClasses.push('hidden-left');
   }
   return baseClasses.join(' ');
+}
+
+function getPageHeight(pageUID) {
+  var element = document.getElementById(pageUID);
+  var style = window.getComputedStyle(element, null);
+  var height = style.height;
+  if (height.indexOf('px') > -1) {
+    height = height.replace('px', '');
+  }
+  return parseInt(height, 10);
 }

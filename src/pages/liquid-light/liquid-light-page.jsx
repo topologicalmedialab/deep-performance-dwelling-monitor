@@ -26,18 +26,19 @@ require('../../styles/main.scss');
 export default class LiquidLightPage extends Component {
   constructor() {
     super();
+    this.uid = 'liquidLightPage';
     this.state = new PageModel(Pages.LIQUID_LIGHT);
   }
 
   // react method definitions
   render() {
     let pageClasses = PageService.getPageClasses(
-      this.state.id,
+      this.state.uid,
       this.state.position
     );
 
     return (
-      <div id="liquidLightPage" className={pageClasses}>
+      <div id={this.uid} className={pageClasses}>
         <header className="header">
           <div className="centered-content">
             <HeaderNavButton
@@ -130,11 +131,18 @@ export default class LiquidLightPage extends Component {
   }
 
   onPageChanged() {
+
     if (AppModel.getCurrentPage() === this.state.id) {
+      // set current page on screen
       this.setState({
         position: 0
       });
-    } else {
+
+      // set current page height
+      AppModel.toggleScroll(PageService.getPageHeight(this.uid));
+
+  } else {
+      // set current page at right of screen
       this.setState({
         position: 1
       });

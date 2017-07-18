@@ -1,5 +1,7 @@
 var Signal = require('signals');
 
+import Settings from '../constants/settings';
+
 
 // vars
 let _previousPage = null;
@@ -14,6 +16,7 @@ let AppModel = {
   changePage: changePage,
   getCurrentPage: getCurrentPage,
   getPreviousPage: getPreviousPage,
+  toggleScroll: toggleScroll,
 };
 export default AppModel;
 
@@ -36,4 +39,12 @@ function getCurrentPage() {
 
 function getPreviousPage() {
   return _previousPage;
+}
+
+function toggleScroll(pageHeight) {
+  if (pageHeight > Settings.SCREEN_HEIGHT) {
+    document.body.style.overflowY = 'auto';
+  } else {
+    document.body.style.overflowY = 'hidden';
+  }
 }

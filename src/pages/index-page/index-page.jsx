@@ -19,6 +19,7 @@ require('../../styles/main.scss');
 export default class IndexPage extends Component {
   constructor() {
     super();
+    this.uid = 'indexPage';
     this.state = new PageModel(Pages.INDEX);
   }
 
@@ -30,7 +31,7 @@ export default class IndexPage extends Component {
     );
 
     return (
-      <div id="indexPage" className={pageClasses}>
+      <div id={this.uid} className={pageClasses}>
         <header className="header">
           <div className="centered-content">
             <h1>Deep-Performance Dwelling</h1>
@@ -101,10 +102,16 @@ export default class IndexPage extends Component {
     window.scrollTo(0, 0);
 
     if (AppModel.getCurrentPage() === this.state.id) {
+      // set current page on screen
       this.setState({
         position: 0
       });
+
+      // set current page height
+      AppModel.toggleScroll(PageService.getPageHeight(this.uid));
+
     } else {
+      // set current page at left of screen
       this.setState({
         position: -1
       });
