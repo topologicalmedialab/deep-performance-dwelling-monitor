@@ -76,7 +76,7 @@ export default class LiquidLightPage extends Component {
                     <ListButton
                       label="Shut Down"
                       hasArrow="false"
-                      isDisabled="true"
+                      onClick={LiquidLightService.shutDown}
                     />
                   </li>
                 </ul>
