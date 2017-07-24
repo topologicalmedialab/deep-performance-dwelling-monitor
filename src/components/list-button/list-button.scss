@@ -1,0 +1,47 @@
+@import '../../styles/variables';
+
+.li-btn {
+  display: block;
+  width: 100%;
+  padding: 24px 0;
+  border: 0;
+
+  background-color: transparent;
+  color: $white;
+
+  font-size: 16pt;
+  text-align: left;
+  line-height: 1;
+
+  &:enabled {
+    cursor: pointer;
+
+    &:active {
+      background: $primaryColor;
+    }
+  }
+
+  &:disabled {
+    opacity: 0.333;
+  }
+
+  &.has-arrow {
+    &:after {
+      content: url(../../assets/images/arrow-right.svg);
+      float: right;
+      width: 16px;
+      height: 26px;
+    }
+  }
+
+  .li-btn-label {
+    font-weight: 300;
+  }
+
+  .li-btn-current-value {
+    position: absolute;
+    right: 32px;
+    font-weight: 200;
+    opacity: 0.8;
+  }
+}

@@ -1,0 +1,28 @@
+.header-nav-button {
+  position: absolute;
+  top: 8px;
+  padding: 11px 16px;
+  margin: 0;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+
+  &.left {
+    left: 4px;
+    .arrow {
+      background-image: url(../../assets/images/arrow-left.svg);
+    }
+  }
+  &.right {
+    right: 4px;
+    .arrow {
+      background-image: url(../../assets/images/arrow-right.svg);
+    }
+  }
+
+  .arrow {
+    display: inline-block;
+    width: 16px;
+    height: 26px;
+  }
+}

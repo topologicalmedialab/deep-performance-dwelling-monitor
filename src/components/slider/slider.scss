@@ -1,0 +1,52 @@
+@import '../../styles/variables';
+
+
+.slider {
+  position: relative;
+  display: block;
+  min-height: 96px;
+  padding: 24px 0;
+
+  .slider-handle {
+    position: absolute;
+    z-index: 2;
+
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    border-radius: 24px;
+
+    background-color: $primaryColor;
+
+    cursor: pointer;
+  }
+
+  .slider-progress {
+    position: absolute;
+    left: 24px;
+    top: 40px;
+    z-index: 1;
+
+    display: inline-block;
+    width: 304px;
+    height: 16px;
+    border-radius: 8px;
+
+    background-color: $primaryColor;
+    opacity: 0.45;
+  }
+
+  .slider-track {
+    position: absolute;
+    left: 24px;
+    top: 40px;
+    z-index: 0;
+
+    display: inline-block;
+    width: 304px;
+    height: 16px;
+    border-radius: 8px;
+
+    background-color: $lightGray;
+  }
+}
