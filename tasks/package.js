@@ -35,7 +35,7 @@ function createPackage() {
   archive.pipe(output);
 
   // append content
-  archive.directory('www/', 'www');
+  archive.directory('www/', 'dpd-monitor');
 
   archive.finalize();
 }
