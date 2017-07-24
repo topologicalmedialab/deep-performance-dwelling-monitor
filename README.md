@@ -57,9 +57,11 @@ Before deploying the monitor interface to the Raspberry Pi, ensure that the proj
 
 1. Check out the project from the repository
 
-2. Follow the following instructions of the "Local Development" section above:
-    a. Technical Requirements
-    b. Installation
+2. Follow the following instructions of the [Local development](#local-development) section above:  
+
+    a. [Technical requirements](#technical-requirements)
+    
+    b. [Installation](#installation)  
 
 3. Run this command in a Terminal window: `webpack`. It will compile the interface assets into the appropriate directory.
 
