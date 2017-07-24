@@ -5,7 +5,7 @@ module.exports = {
   context: path.resolve(__dirname, './src'),
   devServer: {
     contentBase: path.resolve(__dirname, './www'),
-    host: 'local.dpd.edu',
+    host: 'dpd-monitor.local',
     port: 6464
   },
   module: {
