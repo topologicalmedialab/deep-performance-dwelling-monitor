@@ -5,6 +5,7 @@ import Pages from '../../constants/pages';
 
 // services
 import PageService from '../../services/page-service';
+import PiService from '../../services/pi-service';
 
 // models
 import AppModel from '../../models/app-model';
@@ -76,7 +77,7 @@ export default class IndexPage extends Component {
                     <ListButton
                       label="Reboot"
                       hasArrow="false"
-                      isDisabled="true"
+                      onClick={PiService.reboot}
                     />
                   </li>
                 </ul>
