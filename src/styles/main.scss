@@ -137,3 +137,7 @@ ul, ol {
   box-shadow: 0 0 0 4px $secondaryColor;
   outline: 0 !important;
 }
+
+::-webkit-scrollbar { 
+  display: none; 
+}
