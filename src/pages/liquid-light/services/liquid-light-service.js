@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 
-import LiquidLightModes from '../constants/liquid-light-modes';
+import PresentationModes from '../../../constants/presentation-modes';
 import Settings from '../../../constants/settings';
 
 
@@ -23,27 +23,27 @@ function setMode(value) {
   var url;
 
   switch (value) {
-    case LiquidLightModes.ON:
+    case PresentationModes.ON:
       url = ENDPOINT_URL + 'mode/on'
       break;
 
-    case LiquidLightModes.OFF:
+    case PresentationModes.OFF:
       url = ENDPOINT_URL + 'mode/off'
       break;
 
-    case LiquidLightModes.AUTOMATION:
+    case PresentationModes.AUTOMATION:
       url = ENDPOINT_URL + 'mode/automation'
       break;
 
-    case LiquidLightModes.DEMO:
+    case PresentationModes.DEMO:
       url = ENDPOINT_URL + 'mode/demo'
       break;
 
-    case LiquidLightModes.PARTY:
+    case PresentationModes.PARTY:
       url = ENDPOINT_URL + 'mode/party'
       break;
 
-    case LiquidLightModes.PASSIVE:
+    case PresentationModes.PASSIVE:
       url = ENDPOINT_URL + 'mode/passive'
       break;
 

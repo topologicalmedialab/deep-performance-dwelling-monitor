@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
 // constants
-import LiquidLightModes from './constants/liquid-light-modes';
 import LiquidLightPages from './constants/liquid-light-pages';
 import Pages from '../../constants/pages';
+import PresentationModes from '../../constants/presentation-modes';
 
 // services
 import PageService from '../../services/page-service';
@@ -56,44 +56,44 @@ export default class LiquidLightModesPage extends Component {
                 <ul>
                   <li>
                     <ListButton
-                      label={LiquidLightModes.ON}
+                      label={PresentationModes.ON}
                       hasArrow="false"
-                      onClick={this.selectMode.bind(this, LiquidLightModes.ON)}
+                      onClick={this.selectMode.bind(this, PresentationModes.ON)}
                     />
                   </li>
                   <li>
                     <ListButton
-                      label={LiquidLightModes.OFF}
+                      label={PresentationModes.OFF}
                       hasArrow="false"
-                      onClick={this.selectMode.bind(this, LiquidLightModes.OFF)}
+                      onClick={this.selectMode.bind(this, PresentationModes.OFF)}
                     />
                   </li>
                   <li>
                     <ListButton
-                      label={LiquidLightModes.AUTOMATION}
+                      label={PresentationModes.AUTOMATION}
                       hasArrow="false"
-                      onClick={this.selectMode.bind(this, LiquidLightModes.AUTOMATION)}
+                      onClick={this.selectMode.bind(this, PresentationModes.AUTOMATION)}
                     />
                   </li>
                   <li>
                     <ListButton
-                      label={LiquidLightModes.DEMO}
+                      label={PresentationModes.DEMO}
                       hasArrow="false"
-                      onClick={this.selectMode.bind(this, LiquidLightModes.DEMO)}
+                      onClick={this.selectMode.bind(this, PresentationModes.DEMO)}
                     />
                   </li>
                   <li>
                     <ListButton
-                      label={LiquidLightModes.PARTY}
+                      label={PresentationModes.PARTY}
                       hasArrow="false"
-                      onClick={this.selectMode.bind(this, LiquidLightModes.PARTY)}
+                      onClick={this.selectMode.bind(this, PresentationModes.PARTY)}
                     />
                   </li>
                   <li>
                     <ListButton
-                      label={LiquidLightModes.PASSIVE}
+                      label={PresentationModes.PASSIVE}
                       hasArrow="false"
-                      onClick={this.selectMode.bind(this, LiquidLightModes.PASSIVE)}
+                      onClick={this.selectMode.bind(this, PresentationModes.PASSIVE)}
                     />
                   </li>
                 </ul>

@@ -1,4 +1,4 @@
-const LiquidLightModes = {
+const PresentationModes = {
   ON: 'On',
   OFF: 'Off',
   AUTOMATION: 'Automation',
@@ -6,4 +6,4 @@ const LiquidLightModes = {
   PARTY: 'Party',
   PASSIVE: 'Passive',
 };
-export default LiquidLightModes;
+export default PresentationModes;
