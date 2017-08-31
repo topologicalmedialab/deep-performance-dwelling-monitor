@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 
 // constants
-import LiquidLightPages from './constants/liquid-light-pages';
+import PassingLightPages from './constants/passing-light-pages';
 import Pages from '../../constants/pages';
 import PresentationModes from '../../constants/presentation-modes';
 
 // services
 import PageService from '../../services/page-service';
-import LiquidLightService from './services/liquid-light-service';
+import PassingLightService from './services/passing-light-service';
 
 // models
 import AppModel from '../../models/app-model';
 import PageModel from '../../models/page-model';
-import LiquidLightModel from './models/liquid-light-model';
+import PassingLightModel from './models/passing-light-model';
 
 // components
 import HeaderNavButton from '../../components/header-nav-button/header-nav-button.jsx';
@@ -23,11 +23,11 @@ import Slider from '../../components/slider/slider.jsx';
 require('../../styles/main.scss');
 
 
-export default class LiquidLightPage extends Component {
+export default class PassingLightPage extends Component {
   constructor() {
     super();
     this.uid = 'liquidLightPage';
-    this.state = new PageModel(Pages.LIQUID_LIGHT);
+    this.state = new PageModel(Pages.PASSING_LIGHT);
   }
 
   // react method definitions
@@ -45,7 +45,7 @@ export default class LiquidLightPage extends Component {
               direction="left"
               onClick={this.gotoIndex}
             />
-            <h1>Liquid Light</h1>
+            <h1>Passing Light</h1>
           </div>
         </header>
 
@@ -58,7 +58,7 @@ export default class LiquidLightPage extends Component {
                   <li>
                     <div className="li-ui-label">Light Intensity</div>
                     <Slider
-                      id="llIntensitySlider"
+                      id="plIntensitySlider"
                       onUpdated={this.onLightIntensityUpdated}
                     />
                   </li>
@@ -69,15 +69,6 @@ export default class LiquidLightPage extends Component {
                       label="Mode"
                       currentValue={this.state.mode}
                       onClick={this.gotoModesPage}
-                    />
-                  </li>
-                </ul>
-                <ul>
-                  <li>
-                    <ListButton
-                      label="Shut Down"
-                      hasArrow="false"
-                      onClick={LiquidLightService.shutDown}
                     />
                   </li>
                 </ul>
@@ -93,20 +84,20 @@ export default class LiquidLightPage extends Component {
 
   componentDidMount() {
     // set initial state
-    LiquidLightModel.changeMode(PresentationModes.ON);
+    PassingLightModel.changeMode(PresentationModes.ON);
     this.setState({
       position: 1,
-      mode: LiquidLightModel.getCurrentMode()
+      mode: PassingLightModel.getCurrentMode()
     });
 
     // add signal handler
     AppModel.pageChanged.add(this.onPageChanged, this);
-    LiquidLightModel.modeChanged.add(this.onModeChanged, this);
+    PassingLightModel.modeChanged.add(this.onModeChanged, this);
   }
 
   componentWillUnmount() {
     AppModel.pageChanged.remove(this.onPageChanged, this);
-    LiquidLightModel.modeChanged.add(this.onModeChanged, this);
+    PassingLightModel.modeChanged.add(this.onModeChanged, this);
   }
 
 
@@ -116,18 +107,18 @@ export default class LiquidLightPage extends Component {
   }
 
   gotoModesPage() {
-    AppModel.changePage(LiquidLightPages.MODES);
+    AppModel.changePage(PassingLightPages.MODES);
   }
 
   onLightIntensityUpdated(signal) {
-    LiquidLightService.setLightIntensity(signal.ratio);
+    PassingLightService.setLightIntensity(signal.ratio);
   }
 
   onModeChanged() {
     this.setState({
-      mode: LiquidLightModel.getCurrentMode()
+      mode: PassingLightModel.getCurrentMode()
     });
-    LiquidLightService.setMode(LiquidLightModel.getCurrentMode());
+    PassingLightService.setMode(PassingLightModel.getCurrentMode());
   }
 
   onPageChanged() {
