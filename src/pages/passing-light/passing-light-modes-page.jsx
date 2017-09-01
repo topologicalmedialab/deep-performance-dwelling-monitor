@@ -24,7 +24,7 @@ require('../../styles/main.scss');
 export default class PassingLightModesPage extends Component {
   constructor() {
     super();
-    this.uid = 'liquidLightModesPage';
+    this.uid = 'passingLightModesPage';
     this.state = new PageModel(PassingLightPages.MODES);
   }
 
