@@ -1,5 +1,5 @@
 const PassingLightPages = {
-  MODES: 'Modes',
-  LIGHT_INTENSITY: 'Light Intensity',
+  MODES: 'passing-light-modes',
+  LIGHT_INTENSITY: 'passing-light-light-intensity',
 };
 export default PassingLightPages;

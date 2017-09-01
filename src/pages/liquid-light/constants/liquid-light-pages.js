@@ -1,5 +1,5 @@
 const LiquidLightPages = {
-  MODES: 'Modes',
-  LIGHT_INTENSITY: 'Light Intensity',
+  MODES: 'liquid-light-modes',
+  LIGHT_INTENSITY: 'liquid-light-light-instensity',
 };
 export default LiquidLightPages;
