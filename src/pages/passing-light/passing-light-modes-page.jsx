@@ -56,13 +56,6 @@ export default class PassingLightModesPage extends Component {
                 <ul>
                   <li>
                     <ListButton
-                      label={PresentationModes.ON}
-                      hasArrow="false"
-                      onClick={this.selectMode.bind(this, PresentationModes.ON)}
-                    />
-                  </li>
-                  <li>
-                    <ListButton
                       label={PresentationModes.OFF}
                       hasArrow="false"
                       onClick={this.selectMode.bind(this, PresentationModes.OFF)}
@@ -70,16 +63,23 @@ export default class PassingLightModesPage extends Component {
                   </li>
                   <li>
                     <ListButton
-                      label={PresentationModes.AUTOMATION}
+                      label={PresentationModes.EVERYTHING}
                       hasArrow="false"
-                      onClick={this.selectMode.bind(this, PresentationModes.AUTOMATION)}
+                      onClick={this.selectMode.bind(this, PresentationModes.EVERYTHING)}
                     />
                   </li>
                   <li>
                     <ListButton
-                      label={PresentationModes.DEMO}
+                      label={PresentationModes.FLUID}
                       hasArrow="false"
-                      onClick={this.selectMode.bind(this, PresentationModes.DEMO)}
+                      onClick={this.selectMode.bind(this, PresentationModes.FLUID)}
+                    />
+                  </li>
+                  <li>
+                    <ListButton
+                      label={PresentationModes.SHADOW}
+                      hasArrow="false"
+                      onClick={this.selectMode.bind(this, PresentationModes.SHADOW)}
                     />
                   </li>
                   <li>
@@ -87,13 +87,6 @@ export default class PassingLightModesPage extends Component {
                       label={PresentationModes.PARTY}
                       hasArrow="false"
                       onClick={this.selectMode.bind(this, PresentationModes.PARTY)}
-                    />
-                  </li>
-                  <li>
-                    <ListButton
-                      label={PresentationModes.PASSIVE}
-                      hasArrow="false"
-                      onClick={this.selectMode.bind(this, PresentationModes.PASSIVE)}
                     />
                   </li>
                 </ul>

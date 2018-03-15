@@ -84,7 +84,7 @@ export default class PassingLightPage extends Component {
 
   componentDidMount() {
     // set initial state
-    PassingLightModel.changeMode(PresentationModes.ON);
+    PassingLightModel.changeMode(PresentationModes.EVERYTHING);
     this.setState({
       position: 1,
       mode: PassingLightModel.getCurrentMode()

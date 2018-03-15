@@ -23,28 +23,24 @@ function setMode(value) {
   var url;
 
   switch (value) {
-    case PresentationModes.ON:
-      url = ENDPOINT_URL + 'mode/on'
-      break;
-
     case PresentationModes.OFF:
       url = ENDPOINT_URL + 'mode/off'
       break;
 
-    case PresentationModes.AUTOMATION:
-      url = ENDPOINT_URL + 'mode/automation'
+    case PresentationModes.EVERYTHING:
+      url = ENDPOINT_URL + 'mode/everything'
       break;
 
-    case PresentationModes.DEMO:
-      url = ENDPOINT_URL + 'mode/demo'
+    case PresentationModes.FLUID:
+      url = ENDPOINT_URL + 'mode/fluid'
       break;
 
-    case PresentationModes.PARTY:
+    case PresentationModes.SHADOW:
+      url = ENDPOINT_URL + 'mode/shadow'
+      break;
+
+      case PresentationModes.PARTY:
       url = ENDPOINT_URL + 'mode/party'
-      break;
-
-    case PresentationModes.PASSIVE:
-      url = ENDPOINT_URL + 'mode/passive'
       break;
 
     default:
