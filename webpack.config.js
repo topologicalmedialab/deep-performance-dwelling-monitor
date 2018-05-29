@@ -3,13 +3,8 @@ const webpack = require('webpack');
 
 module.exports = {
   context: path.resolve(__dirname, './src'),
-  devServer: {
-    contentBase: path.resolve(__dirname, './www'),
-    host: 'dpd-monitor.local',
-    port: 6464
-  },
   module: {
-    loaders: [
+    rules: [
       // jsx
       {
         test: /.jsx?$/,
