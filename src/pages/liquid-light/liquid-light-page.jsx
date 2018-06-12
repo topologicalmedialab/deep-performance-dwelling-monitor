@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
 // constants
-import Pages from '../../constants/pages';
-import LiquidLightModes from './constants/liquid-light-modes';
 import LiquidLightPages from './constants/liquid-light-pages';
+import Pages from '../../constants/pages';
+import PresentationModes from '../../constants/presentation-modes';
 
 // services
 import PageService from '../../services/page-service';
@@ -58,7 +58,7 @@ export default class LiquidLightPage extends Component {
                   <li>
                     <div className="li-ui-label">Light Intensity</div>
                     <Slider
-                      id="lightIntensitySlider"
+                      id="llIntensitySlider"
                       onUpdated={this.onLightIntensityUpdated}
                     />
                   </li>
@@ -93,7 +93,7 @@ export default class LiquidLightPage extends Component {
 
   componentDidMount() {
     // set initial state
-    LiquidLightModel.changeMode(LiquidLightModes.ON);
+    LiquidLightModel.changeMode(PresentationModes.ON);
     this.setState({
       position: 1,
       mode: LiquidLightModel.getCurrentMode()

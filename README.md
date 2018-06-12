@@ -21,8 +21,8 @@ User interface of the monitor that controls some components of the Deep-Performa
 Ensure you install these modules globally on your development machine:
 
 - [Node](https://nodejs.org/)
-- [Webpack](https://webpack.js.org/)
-- [Webpack Dev Server](https://webpack.github.io/docs/webpack-dev-server.html)
+- [Webpack v4 or higher](https://webpack.js.org/)
+- [webpack-cli](https://webpack.js.org/api/cli/)
 
 
 ### Installation
@@ -32,21 +32,13 @@ Once you checked out this project, run this command in a Terminal window:
     npm install
 
 
-### Hosts file
-
-Ensure that this entry is present in your [hosts file](https://en.wikipedia.org/wiki/Hosts_(file)):
-
-    127.0.0.1 dpd-monitor.local
-
 ### How to run site during development
 
 1. Run this command in a Terminal window:
 
-        webpack-dev-server
+        webpack -d
 
-2. Open a browser at [http://dpd-monitor.local:6464/](http://dpd-monitor.local:6464/) to view the project.
-
-From this point on, you can edit the files in the `src` directory and the browser will update automatically when you save your changes.
+2. Open a browser and load `index.html` file in the `www` directory.
 
 
 ## Deployment to Raspberry Pi

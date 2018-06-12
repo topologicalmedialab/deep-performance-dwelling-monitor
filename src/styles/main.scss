@@ -23,8 +23,8 @@ body {
   overflow-x: hidden;
   overflow-y: hidden;
 
-  background-color: $darkColor;
-  color: $white;
+  background-color: $white;
+  color: $darkColor;
 
   font-family: $ffSansSerif;
   font-size: 16pt;
@@ -116,7 +116,7 @@ ul, ol {
   }
 
   li {
-    border-bottom: 2px solid $primaryColor;
+    border-bottom: 2px solid $darkColor;
 
     &.is-header {
       border-bottom: none;
@@ -136,4 +136,8 @@ ul, ol {
   border-color: $secondaryColor;
   box-shadow: 0 0 0 4px $secondaryColor;
   outline: 0 !important;
+}
+
+::-webkit-scrollbar { 
+  display: none; 
 }

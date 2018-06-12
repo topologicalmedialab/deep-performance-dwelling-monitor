@@ -1,37 +1,39 @@
 import React, { Component } from 'react';
 
 // constants
-import LiquidLightPages from './constants/liquid-light-pages';
+import PassingLightPages from './constants/passing-light-pages';
 import Pages from '../../constants/pages';
 import PresentationModes from '../../constants/presentation-modes';
 
 // services
 import PageService from '../../services/page-service';
+import PassingLightService from './services/passing-light-service';
 
 // models
 import AppModel from '../../models/app-model';
 import PageModel from '../../models/page-model';
-import LiquidLightModel from './models/liquid-light-model';
+import PassingLightModel from './models/passing-light-model';
 
 // components
 import HeaderNavButton from '../../components/header-nav-button/header-nav-button.jsx';
 import ListButton from '../../components/list-button/list-button.jsx';
+import Slider from '../../components/slider/slider.jsx';
 
 
 require('../../styles/main.scss');
 
 
-export default class LiquidLightModesPage extends Component {
+export default class PassingLightPage extends Component {
   constructor() {
     super();
-    this.uid = 'liquidLightModesPage';
-    this.state = new PageModel(LiquidLightPages.MODES);
+    this.uid = 'passingLightPage';
+    this.state = new PageModel(Pages.PASSING_LIGHT);
   }
 
   // react method definitions
   render() {
     let pageClasses = PageService.getPageClasses(
-      this.state.id,
+      this.state.uid,
       this.state.position
     );
 
@@ -41,10 +43,9 @@ export default class LiquidLightModesPage extends Component {
           <div className="centered-content">
             <HeaderNavButton
               direction="left"
-              hasArrow="false"
-              onClick={this.gotoLiquidLightPage}
+              onClick={this.gotoIndex}
             />
-            <h1>Modes</h1>
+            <h1>Passing Light</h1>
           </div>
         </header>
 
@@ -52,48 +53,22 @@ export default class LiquidLightModesPage extends Component {
           <div className="centered-content">
             <div className="column left"></div>
             <div className="column right fixed">
-              <div className="column-content">
+              <div className="column-content aligned-bottom">
+                <ul>
+                  <li>
+                    <div className="li-ui-label">Light Intensity</div>
+                    <Slider
+                      id="plIntensitySlider"
+                      onUpdated={this.onLightIntensityUpdated}
+                    />
+                  </li>
+                </ul>
                 <ul>
                   <li>
                     <ListButton
-                      label={PresentationModes.ON}
-                      hasArrow="false"
-                      onClick={this.selectMode.bind(this, PresentationModes.ON)}
-                    />
-                  </li>
-                  <li>
-                    <ListButton
-                      label={PresentationModes.OFF}
-                      hasArrow="false"
-                      onClick={this.selectMode.bind(this, PresentationModes.OFF)}
-                    />
-                  </li>
-                  <li>
-                    <ListButton
-                      label={PresentationModes.AUTOMATION}
-                      hasArrow="false"
-                      onClick={this.selectMode.bind(this, PresentationModes.AUTOMATION)}
-                    />
-                  </li>
-                  <li>
-                    <ListButton
-                      label={PresentationModes.DEMO}
-                      hasArrow="false"
-                      onClick={this.selectMode.bind(this, PresentationModes.DEMO)}
-                    />
-                  </li>
-                  <li>
-                    <ListButton
-                      label={PresentationModes.PARTY}
-                      hasArrow="false"
-                      onClick={this.selectMode.bind(this, PresentationModes.PARTY)}
-                    />
-                  </li>
-                  <li>
-                    <ListButton
-                      label={PresentationModes.PASSIVE}
-                      hasArrow="false"
-                      onClick={this.selectMode.bind(this, PresentationModes.PASSIVE)}
+                      label="Mode"
+                      currentValue={this.state.mode}
+                      onClick={this.gotoModesPage}
                     />
                   </li>
                 </ul>
@@ -109,22 +84,41 @@ export default class LiquidLightModesPage extends Component {
 
   componentDidMount() {
     // set initial state
+    PassingLightModel.changeMode(PresentationModes.EVERYTHING);
     this.setState({
       position: 1,
+      mode: PassingLightModel.getCurrentMode()
     });
 
     // add signal handler
     AppModel.pageChanged.add(this.onPageChanged, this);
+    PassingLightModel.modeChanged.add(this.onModeChanged, this);
   }
 
   componentWillUnmount() {
     AppModel.pageChanged.remove(this.onPageChanged, this);
+    PassingLightModel.modeChanged.add(this.onModeChanged, this);
   }
 
 
   // methods definitions
-  gotoLiquidLightPage() {
-    AppModel.changePage(Pages.LIQUID_LIGHT);
+  gotoIndex() {
+    AppModel.changePage(Pages.INDEX);
+  }
+
+  gotoModesPage() {
+    AppModel.changePage(PassingLightPages.MODES);
+  }
+
+  onLightIntensityUpdated(signal) {
+    PassingLightService.setLightIntensity(signal.ratio);
+  }
+
+  onModeChanged() {
+    this.setState({
+      mode: PassingLightModel.getCurrentMode()
+    });
+    PassingLightService.setMode(PassingLightModel.getCurrentMode());
   }
 
   onPageChanged() {
@@ -143,10 +137,5 @@ export default class LiquidLightModesPage extends Component {
         position: 1
       });
     }
-  }
-
-  selectMode(mode) {
-    LiquidLightModel.changeMode(mode);
-    AppModel.changePage(Pages.LIQUID_LIGHT);
   }
 }
