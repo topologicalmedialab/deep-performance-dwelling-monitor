@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 // constants
 import LiquidLightPages from './constants/liquid-light-pages';
 import Pages from '../../constants/pages';
-import PresentationModes from '../../constants/presentation-modes';
+import LiquidLightModes from './constants/liquid-light-modes';
 
 // services
 import PageService from '../../services/page-service';
@@ -53,7 +53,7 @@ export default class LiquidLightPage extends Component {
           <div className="centered-content">
             <div className="column left"></div>
             <div className="column right fixed">
-              <div className="column-content aligned-bottom">
+              <div className="column-content">
                 <ul>
                   <li>
                     <div className="li-ui-label">Light Intensity</div>
@@ -65,10 +65,28 @@ export default class LiquidLightPage extends Component {
                 </ul>
                 <ul>
                   <li>
+                    <div className="li-ui-label">Motor Speed</div>
+                    <Slider
+                      id="llMotorSpeed"
+                      onUpdated={this.onMotorSpeedUpdated}
+                    />
+                  </li>
+                </ul>
+                <ul>
+                  <li>
                     <ListButton
                       label="Mode"
                       currentValue={this.state.mode}
                       onClick={this.gotoModesPage}
+                    />
+                  </li>
+                </ul>
+                <ul>
+                  <li>
+                    <ListButton
+                      label="Reset"
+                      hasArrow="false"
+                      onClick={LiquidLightService.reset}
                     />
                   </li>
                 </ul>
@@ -93,7 +111,7 @@ export default class LiquidLightPage extends Component {
 
   componentDidMount() {
     // set initial state
-    LiquidLightModel.changeMode(PresentationModes.ON);
+    LiquidLightModel.changeMode(LiquidLightModes.ON);
     this.setState({
       position: 1,
       mode: LiquidLightModel.getCurrentMode()
@@ -121,6 +139,10 @@ export default class LiquidLightPage extends Component {
 
   onLightIntensityUpdated(signal) {
     LiquidLightService.setLightIntensity(signal.ratio);
+  }
+
+  onMotorSpeedUpdated(signal) {
+    LiquidLightService.setMotorSpeed(signal.ratio);
   }
 
   onModeChanged() {

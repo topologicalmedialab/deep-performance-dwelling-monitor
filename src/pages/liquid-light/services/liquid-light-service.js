@@ -11,8 +11,10 @@ const ENDPOINT_URL = 'http://' + Settings.ENDPOINT_HOST + ':' + Settings.ENDPOIN
 
 // public api
 let LiquidLightService = {
+  reset: reset,
   setLightIntensity: setLightIntensity,
   setMode: setMode,
+  setMotorSpeed: setMotorSpeed,
   shutDown: shutDown,
 };
 export default LiquidLightService;
@@ -65,12 +67,7 @@ function setLightIntensity(value) {
     );
   }
 
-  // limit value
-  if (value < 0) {
-    value = 0;
-  } else if (value > 1) {
-    value = 1;
-  }
+  value = limitRatio(value);
 
   // post request
   var request = new XMLHttpRequest();   // new HttpRequest instance 
@@ -81,8 +78,45 @@ function setLightIntensity(value) {
   }));
 }
 
+function setMotorSpeed(value) {
+  // error checking
+  if (!_.isNumber(value)) {
+    throw new Error(
+      'Error at LiquidLightService#setMotorSpeed: ' +
+      'Argument is expected to be a number.'
+    );
+  }
+
+  value = limitRatio(value);
+
+  // post request
+  var request = new XMLHttpRequest();   // new HttpRequest instance 
+  request.open('POST', ENDPOINT_URL + 'motor');
+  request.setRequestHeader('Content-Type', 'application/json');
+  request.send(JSON.stringify({
+    speed: Math.round(value * 255)
+  }));
+}
+
+function reset() {
+  var request = new XMLHttpRequest();
+  request.open('GET', ENDPOINT_URL + 'reset');
+  request.send();
+}
+
 function shutDown() {
   var request = new XMLHttpRequest();
   request.open('GET', ENDPOINT_URL + 'shut-down');
   request.send();
+}
+
+
+// utils
+function limitRatio(value) {
+  if (value < 0) {
+    value = 0;
+  } else if (value > 1) {
+    value = 1;
+  }
+  return value;
 }
